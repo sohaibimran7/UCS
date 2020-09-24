@@ -103,4 +103,4 @@ with open('UK_cities.json', 'r') as f:
 # Runs th ucs function above with start: 'london', goal: 'aberdeen' and cities: cities
 # Prints the return value('failure' or solution)
 cities, total_distance = ucs('london', 'aberdeen', cities)
-print("Solution: {}, total distance {}".format(' -> '.join([city for city in cities]), total_distance))
+print("Solution: {}, total distance: {}".format(' -> '.join([city for city in cities]), total_distance))
