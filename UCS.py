@@ -20,7 +20,7 @@ def ucs(start, goal, cities):
                                     N \
                                        \
                                          - Appends to frontier, sorts and prints frontier
-                                         
+
 
     If city not found in keys then iterates through all values of all keys to find city in values instead.
 
