@@ -70,9 +70,9 @@ def ucs(start, goal, cities):
                         for i, v in enumerate(frontier):
                             if v[0] == child:
                                 if cities[city][child]['weight'] + node[1] < v[1]:
-                                    frontier.remove(v)
                                     new_node = (child, cities[city][child]['weight'] + node[1], node[2] + [child])
-                                    frontier.append(new_node)
+                                    del frontier[i]
+                                    frontier.insert(i, new_node)
                                 break
                         else:
                             new_node = (child, cities[city][child]['weight'] + node[1], node[2] + [child])
@@ -89,9 +89,9 @@ def ucs(start, goal, cities):
                             for i, v in enumerate(frontier):
                                 if v[0] == city:
                                     if cities[city][child]['weight'] + node[1] < v[1]:
-                                        frontier.remove(v)
                                         new_node = (city, cities[city][child]['weight'] + node[1], node[2] + [city])
-                                        frontier.append(new_node)
+                                        del frontier[i]
+                                        frontier.insert(i, new_node)
                                     break
                             else:
                                 new_node = (city, cities[city][child]['weight'] + node[1], node[2] + [city])
